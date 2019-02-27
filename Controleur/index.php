@@ -1,6 +1,6 @@
 <?php
 
-function($dureePret, $montantFinance){
+function DeterminerLeTauxDinteret($dureePret, $montantFinance){
     $tauxInteret = 0;
 if($dureePret == 24 || $dureePret == 12 && $montantFinance <= 10000){
     $tauxInteret = 6.95;
@@ -31,7 +31,12 @@ if($dureePret == 60 && $montantFinance > 10000){
         $tauxInteret = 5.85;
     
 }
+$tauxInteret = $tauxInteret/100;
+
 return $tauxInteret;
+}
+function mensualités(){
+DeterminerLeTauxDinteret()
 
 
 
