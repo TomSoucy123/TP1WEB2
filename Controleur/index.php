@@ -66,18 +66,22 @@ return $resultat;
 
 
 $dureeDuPret = 24;
-function mensualités($dureeDuPret){
+/* function mensualités($dureeDuPret){
 $mensualite = 0;
 $interet = DeterminerLeTauxDinteret($dureeDuPret, $montantFinance);
+$nombre = 1+$interet;
+$puissance = puissance($nombre, $dureeDuPret);
+$calcul = ($interet * $puissance)/($puissance -1);
+echo $calcul; */
 
 
-}
+/* } */
 
 
 
  
 
-} 
+ 
 
 
 
