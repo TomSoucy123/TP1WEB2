@@ -2,7 +2,7 @@
 $dureePret = 36;
 $montantFinance = 8000;
 
-function DeterminerLeTauxDinteret($dureePret, $montantFinance){
+function determinerLeTauxDinteret($dureePret, $montantFinance){
     $tauxInteret = 0;
 if($dureePret == 24 || $dureePret == 12 && $montantFinance <= 10000){
     $tauxInteret = 6.95;
@@ -65,7 +65,7 @@ return $resultat;
 
 
 
-$dureeDuPret = 24;
+
 /* function mensualités($dureeDuPret){
 $mensualite = 0;
 $interet = DeterminerLeTauxDinteret($dureeDuPret, $montantFinance);
@@ -76,7 +76,14 @@ echo $calcul; */
 
 
 /* } */
-
+$dureeDuPret = 24;
+$montantFinance = 11000;
+function mensualités($dureeDuPret){
+$interet = determinerLeTauxDinteret($dureeDuPret, $montantFinance);
+$mensualite = $montantFinance / ((1-(1+ (((1+$interet)(1/12))-1)(-$dureeDuPret))/(((1+$interet)(1/12))-1);
+echo $mensualite;
+return $mensualite;
+}
 
 
  
