@@ -44,7 +44,7 @@ if($dureePret == 60 && $montantFinance > 10000){
     
 }
 
-$tauxInteret = $tauxInteret/100;
+$tauxInteret = $tauxInteret/1000;
 // echo $tauxInteret;
 
 
@@ -53,13 +53,7 @@ return $tauxInteret;
 }
 
 
-function puissance($nombre,$exposant){
-$resultat=0;
-        for ($i=0;$i<$exposant;$i++){
-                $resultat =  $resultat *$nombre;
-        }
-return $resultat;
- }
+
 
 
 
@@ -76,16 +70,26 @@ echo $calcul; */
 
 
 /* } */
-$dureeDuPret = 24;
-$montantFinance = 11000;
-function mensualités($dureeDuPret){
-$interet = determinerLeTauxDinteret($dureeDuPret, $montantFinance);
-$mensualite = $montantFinance / ((1-(1+ (((1+$interet)(1/12))-1)(-$dureeDuPret))/(((1+$interet)(1/12))-1);
-echo $mensualite;
+$financement = 10000;
+$dureeDuPret = 60;
+function calcul_mensualite($dureeDuPret,$financement){
+$interet = determinerLeTauxDinteret($dureeDuPret, $financement);
+echo $interet;
+echo "<br><br>";
+
+$premiereLigne = $interet * pow(1+$interet, $dureeDuPret);
+echo $premiereLigne;
+echo "<br><br>";
+
+$deuxiemeLigne = pow(1+$interet, $dureeDuPret) - 1;
+echo $deuxiemeLigne;
+echo "<br><br>";
+$mensualite = $financement * ($premiereLigne/$deuxiemeLigne);
 return $mensualite;
 }
 
-
+$mensualite = calcul_mensualite($dureePret,$financement);
+echo $mensualite;
  
 
  
