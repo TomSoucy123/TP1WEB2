@@ -29,8 +29,9 @@
   <!--------------- Liste deroulante marque ------------------>
   <label for='marques'> Liste De Marque <select name="liste_marque">
     <?php
-    include ('voitures.php');
-
+    $tab_marques=array("Honda","Toyota","Chevrolet","Bmw");
+    sort($tab_marques);
+    include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
     choisirMarques($tab_marques);
     ?>
   </select>

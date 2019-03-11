@@ -36,7 +36,6 @@ $max = sizeof($tab_marques);
         }
     }
 
-
 /*     function listeMarque($tableauMarque) {
 switch($tableauMarque) {
     case $tab_marqueHonda:
