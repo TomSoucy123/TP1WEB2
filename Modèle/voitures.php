@@ -18,9 +18,14 @@ $tab_marqueChevrolet = array(
     ('modele' => 'colorado', 'prix' => 9499, 'descritpion' => "4X4, automatique, seulement 160 00 km, 2007, tres bon camion", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\coloradoBeige.JPG" width="280" height="125" title="coloradoBeige" alt="coloradoBeige" />'),
     ('modele' => 'corvette', 'prix' => 18995, 'descritpion' => "belle corvette decapotable, manuelle, 72 000 km, couleur grise", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\corvetteGrise.JPG" width="280" height="125" title="corvette" alt="corvette" />'));
 
+$tab_marqueBmw = array(
+    ('modele' => '330xi', 'prix' => 7900, 'descritpion' => "Bmw 330xi 2006, excellent état, seulement 130 000km", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\330xi.JPG" width="280" height="125" title="330xi" alt="330xi" />'),
+    ('modele' => 'm4', 'prix' => 75 990, 'descritpion' => "Bmw m4 2019, neuve, venez la voir !", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\m4.JPG" width="280" height="125" title="m4" alt="m4" />'),
+    ('modele' => 'z4', 'prix' => 21 900, 'descritpion' => "Bmw z4 2007, excellent état, seulement 46 000km", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\z4.JPG" width="280" height="125" title="z4" alt="z4" />'));
+
     /*--------------- fonction liste deroulante marque ------------------*/
 
-$tab_marques=array("Honda","Toyota","Chevrolet");
+$tab_marques=array("Honda","Toyota","Chevrolet","Bmw");
 sort($tab_marques);
 $max = sizeof($tab_marques);
     function choisirMarques($tab_marques){
