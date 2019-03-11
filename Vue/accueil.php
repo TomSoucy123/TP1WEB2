@@ -34,6 +34,17 @@
     choisirMarques($tab_marques);
     ?>
   </select>
+
+  <!--------------- Liste deroulante modele ------------------>
+  <label for='modele'> Liste De Marques <select name="liste_modele" value=''>
+    <?php
+    include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
+    sort($tab_modele);
+    choisirModele($tab_modele);
+    ?>
+  </select>
+
+
   </form>
 
     
