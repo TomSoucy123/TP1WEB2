@@ -70,11 +70,14 @@ echo $calcul; */
 
 
 /* } */
-$financement = 10000;
-$dureeDuPret = 60;
-function calcul_mensualite($dureeDuPret,$financement){
-$interet = determinerLeTauxDinteret($dureeDuPret, $financement);
+$capitalInvesti = 5000;
+$dureeDuPret = 36;
+
+function calcul_mensualite($dureeDuPret,$capitalInvesti){
+        
+$interet = determinerLeTauxDinteret($dureeDuPret, $capitalInvesti);
 echo $interet;
+
 echo "<br><br>";
 
 $premiereLigne = $interet * pow(1+$interet, $dureeDuPret);
@@ -84,12 +87,12 @@ echo "<br><br>";
 $deuxiemeLigne = pow(1+$interet, $dureeDuPret) - 1;
 echo $deuxiemeLigne;
 echo "<br><br>";
-$mensualite = $financement * ($premiereLigne/$deuxiemeLigne);
+$mensualite = $capitalInvesti * ($premiereLigne/$deuxiemeLigne);
 return $mensualite;
 }
 
-$mensualite = calcul_mensualite($dureePret,$financement);
-echo $mensualite;
+$mensualite = calcul_mensualite($dureePret,$capitalInvesti);
+echo $mensualite; 
  
 
  
