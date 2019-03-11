@@ -30,7 +30,6 @@ sort($tab_marques);
 $max = sizeof($tab_marques);
     function choisirMarques($tab_marques){
         for($i = 0; $i < sizeof($tab_marques); $i++){
-       
             echo '<option>' .$tab_marques[$i]. '</option>';
             echo '<br><br>';
         }
