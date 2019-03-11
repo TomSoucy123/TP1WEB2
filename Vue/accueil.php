@@ -27,11 +27,10 @@
   
     <form name='formulaire' method='post'>
   <!--------------- Liste deroulante marque ------------------>
-  <label for='marques'> Liste De Marques <select name="liste_marque">
+  <label for='marques'> Liste De Marques <select name="liste_marque" value=''>
     <?php
-    $tab_marques=array("Honda","Toyota","Chevrolet","Bmw");
-    sort($tab_marques);
     include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
+    sort($tab_marques);
     choisirMarques($tab_marques);
     ?>
   </select>
