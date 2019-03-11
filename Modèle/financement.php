@@ -1,5 +1,6 @@
 <?php
 include ('\wamp64\www\Exer\TP1WEB2\Controleur\index.php');
+include ('\wamp64\www\Exer\TP1WEB2\Modèle\voitures.php');
 $mensualite = calcul_mensualite($dureePret,$capitalInvesti);
 echo "La mensualité est ".$mensualite; 
 echo "<br><br>";
