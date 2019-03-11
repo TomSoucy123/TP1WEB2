@@ -20,20 +20,32 @@ $tab_marqueChevrolet = array(
 
     /*--------------- fonction liste deroulante marque ------------------*/
 
-    function listeMarque($tableauMarque) {
+$tab_marques=array("Honda","Toyota","Chevrolet");
+sort($tab_marques);
+$max = sizeof($tab_marques);
+    function choisirMarques($tab_marques){
+        for($i = 0; $i < sizeof($tab_marques); $i++){
+       
+            echo '<option>' .$tab_marques[$i]. '</option>';
+            echo '<br><br>';
+        }
+    }
+
+
+/*     function listeMarque($tableauMarque) {
 switch($tableauMarque) {
-    case "$tab_marqueHonda":
+    case $tab_marqueHonda:
     echo '<option>' ."Honda". '</option>';
     echo '<br><br>';
     break;
-    case "$tab_marqueToyota":
+    case $tab_marqueToyota:
     echo '<option>' ."Toyota". '</option>';
     echo '<br><br>';
     break;
-    case "$tab_marqueChevrolet":
+    case $tab_marqueChevrolet:
     echo '<option>' ."Chevrolet". '</option>';
     echo '<br><br>';
     break;
     }
-}
+} */
 ?>
