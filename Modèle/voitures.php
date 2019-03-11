@@ -31,8 +31,13 @@ $tab_marqueBmw = array(
 
 $tab_marques = array($tab_marqueHonda[0],$tab_marqueToyota[0],$tab_marqueChevrolet[0],$tab_marqueBmw[0]);
     function choisirMarques($tab_marques){
-        foreach($tab_marques as $cle => $valeur) {
+        foreach($tab_marques as $index => $array) {
+            foreach($array as $marque =>$valeur) {
             echo '<option value="'.$valeur.'">'.$valeur. '</option>';
             echo '<br><br>';
         }
     }
+}
+
+/*--------------- fonction liste deroulante marque ------------------*/
+
