@@ -27,7 +27,7 @@
   
     <form name='formulaire' method='post'>
   <!--------------- Liste deroulante marque ------------------>
-  <label for='marques'> Liste De Marque <select name="liste_marque">
+  <label for='marques'> Liste De Marques <select name="liste_marque">
     <?php
     $tab_marques=array("Honda","Toyota","Chevrolet","Bmw");
     sort($tab_marques);
