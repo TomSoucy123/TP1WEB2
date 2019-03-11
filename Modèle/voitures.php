@@ -1,7 +1,7 @@
 <?php
 
 $tab_marqueHonda = array(
-    ('modele' => 'civic', 'prix' => 2999, 'description' => "Honda civic 2003 bleu avec 4 pneus d'hiver pirelli neufs tout fonctionne", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\civicBleu.JPG" width="280" height="125" title="civicBleu" alt="civicBleu" />'),
+    ('modele' => 'civic', 'prix' => 2999, 'description' => 'Honda civic 2003 bleu avec 4 pneus d\'hiver pirelli neufs tout fonctionne', 'photo' => '<img src='D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\civicBleu.JPG' width='280' height='125' title='civicBleu' alt='civicBleu' />'),
     ('modele' => 'civic', 'prix' => 4299, 'description' => "Honda civic 2005 noir en tres bonne condition", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\civicNoir.JPG" width="280" height="125" title="civicNoir" alt="civicNoir" />'),
     ('modele' => 'accord', 'prix' => 4999, 'description' => "Honda accord 2002 v6 gris, tout équipé, faut que sa parte !", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\accordGris.JPG" width="280" height="125" title="accordGris" alt="accordGris" />'),
     ('modele' => 'cr-v', 'prix' => 2499, 'description' => "Honda Cr-V 2004 v4 gris, fonctionne très bien, appartenait à une mère de famille, 1 seul proprio !", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\crvGris.JPG" width="280" height="125" title="crvGris" alt="crvGris" />'));
