@@ -1,3 +1,8 @@
+<?php
+include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,15 +30,19 @@
     </nav> 
     <h1>Bienvenue sur notre site d'achat de voitures en ligne</h1><br>
   
-    <form name='formulaire' method='post'>
+    <form method="POST" action="voitures.php">
   <!--------------- Liste deroulante marque ------------------>
-  <label for='marques'> Liste De Marques <select name="liste_marque" value=''>
+  <select name="listemarque">
     <?php
-    include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
+    
     sort($tab_marques);
     choisirMarques($tab_marques);
+    if(isset($_POST['listemarque'])){
+      $nom = $_POST['listemarque'];
+      header('Location:voitures.php?name=' .$nom);
+    }
     ?>
-  </select>
+ 
   </form>
 
     
