@@ -32,14 +32,10 @@ sort($tab_marques);
   
     <form method="POST" action="#">
 
-<!--$marque = (isset($_POST['marque']))? $_POST['marque'] : "Honda";
-$valider = (isset($_POST['validation']))? $_POST['validation'] ; null;
-if($valider != null) {
-  $modele = $_POST['modele'];
-  $marque1 = $_POST['marque'];
-  header("location")
-  } -->
-
+<?php
+$marque = (isset($_POST['marque']))? $_POST['marque'] : "Honda";
+$valider = (isset($_POST['validation']))? $_POST['validation'] : null;
+?>
 
   <!--------------- Liste deroulante marque ------------------>
   <form method="POST" action="#">
