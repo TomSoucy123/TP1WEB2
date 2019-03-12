@@ -61,11 +61,7 @@ if($valider != null) {
   <!--------------- Liste deroulante modele ------------------>
   Marques de voitures: <select name="listeMarque" value="">
   <?php
-  foreach($tabs_modele as $marque => $listeModele) {
-    foreach($listeModele as $modele) {
-      echo '<option value="'.$modele.'">'.$modele. '</option>';
-    }
-  }
+  
  ?>
  <input type="submit" name="submit" value="Get Selected Values" />
   </form>
