@@ -30,7 +30,8 @@
     $couts = 200;
     $couts_final = $couts - $accompte;
     $taxes_finaux = calculerTaxes($couts_final);
-    $taxes = calculerTaxes($couts);
+    /* $interets = calculerInterets($_POST['interets'], $couts);  */
+    echo $_POST['interets'];
 
 ?>
 
@@ -44,8 +45,14 @@
      <br><br>
     Intérêts: <select name="interets" value=""> 
     <?php
+    if($couts <= 10000){
+
+    
         listeDeroulante($tableauInteretPrixMoinsQue10000);
+    }
+    else{
         listeDeroulante($tableauInteretPrixPlusQue10000);
+    }
         ?>
         </select>
         <input type='submit' name="calcul" value="Calculer" />
@@ -87,7 +94,7 @@
   
   <tr>
     <td>Paiement mensuel :</td>
-    <td>500$</td>
+    <td><?php $interets  ?></td>
     <td>500$</td>
     
   </tr>
