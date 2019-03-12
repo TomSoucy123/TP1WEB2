@@ -43,7 +43,7 @@ $tab_marques = array($tab_marqueHonda[0],$tab_marqueToyota[0],$tab_marqueChevrol
     
     
 }
-echo  $_GET['name'];
+/* echo  $_GET['name']; */
 
 /*--------------- fonction liste deroulante marque ------------------*/
 
