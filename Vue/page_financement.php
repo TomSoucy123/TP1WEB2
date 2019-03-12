@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,9 +25,12 @@
 
     </style>
     <?php
+    include ('\wamp64\www\tp1WEB2\Controleur\index.php');
     $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : null;
-    $couts = "100$";
+    $couts = 200;
     $couts_final = $couts - $accompte;
+    $taxes_finaux = calculerTaxes($couts_final);
+    $taxes = calculerTaxes($couts);
 
 ?>
 
@@ -38,7 +42,12 @@
     <form name='formulaire' method='post' action=''>
     <label for='nom'>Saisissez votre accompte :</label>           <input type='number' name="accompte" value="<?php echo $accompte ?>" />
     <input type='submit' name="calcul" value="Calculer" /> <br><br>
-    
+    Intérêts: <select name="interets" value=""> 
+
+    </select>
+
+
+  
     <table>
   <tr> 
     <td>Coût :</td>
@@ -48,18 +57,18 @@
   
   <tr>
     <td>Coût total :</td>
-    <td><?php echo $couts; ?></td>
-    <td><?php echo $couts_final; ?></td>
+    <td><?php echo $couts."$"?></td>
+    <td><?php echo $couts_final."$"; ?></td>
     
   </tr>
   <tr>
     <td>Taxes :</td>
-    <td>200$</td>
-    <td>200$</td>
+    <td><?php echo $taxes."$"; ?></td>
+    <td><?php echo $taxes_finaux."$"; ?></td>
   </tr>
   
   <tr>
-    <td>intérêt :</td>
+    <td>Intérêt :</td>
     <td>500$</td>
     <td>500$</td>
     
