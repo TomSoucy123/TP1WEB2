@@ -1,10 +1,52 @@
 <?php
 $capitalInvesti = 10000;
 $dureePret = 60;
+$prix = 10000;
 
 
-function determinerLeTauxDinteret($dureePret, $capitalInvesti){
-    $tauxInteret = 0;
+function determinerLeTauxDinteret($dureePret, $prix){
+        if($prix <= 10000){
+                switch($dureePret){
+                    case "12";
+                        $interet = 0.695;
+                        break;
+                    case "24";
+                        $interet = 0.695;
+                        break;
+                    case "36";
+                        $interet = 0.625;
+                        break;
+                    case "48";
+                        $interet = 0.610;
+                        break;
+                    case "60";
+                        $interet = 0.600;
+                        break;
+                }
+            }
+            else{
+                switch($dureePret){
+                    case "12";
+                        $interet = 0.725;
+                        break;
+                    case "24";
+                        $interet = 0.725;
+                        break;
+                    case "36";
+                        $interet = 0.630;
+                        break;
+                    case "48";
+                        $interet = 0.630;
+                        break;
+                    case "60";
+                        $interet = 0.585;
+                        break;
+                }
+            }
+            $tauxInteret = $interet/100;
+            return $tauxInteret;
+        }
+/*     $tauxInteret = 0;
 if($dureePret == 24 || $dureePret == 12 && $capitalInvesti <= 10000){
     $tauxInteret = 6.95;
     
@@ -46,32 +88,19 @@ if($dureePret == 60 && $capitalInvesti > 10000){
 }
 
 $tauxInteret = $tauxInteret/1000;
-// echo $tauxInteret;
+echo $tauxInteret;
 
 
 
 return $tauxInteret;
-}
+} */
 
 
 
 function calcul_mensualite($dureePret,$capitalInvesti){
-        
 $interet = determinerLeTauxDinteret($dureePret, $capitalInvesti);
-
-
-
-
 $premiereLigne = $capitalInvesti * ($interet/12);
-
-
-
-
 $deuxiemeLigne = 1 - pow((1+($interet/12)),-$dureePret);
-
-
-
-
 $mensualite = $premiereLigne/$deuxiemeLigne;
 return $mensualite;
 }
@@ -83,15 +112,17 @@ function calculerInterets($dureePret,$capitalInvesti){
         return $interets;
         
 }
-$prix = 10000;
+
 function calculerTaxes($prix){
 $tps = ($prix * 5) / 100;
 $tvq = ($prix * 9.975) / 100;
 $taxes= $tps + $tvq;
-return taxes;
-
+return $taxes;
 
 }
+
+
+
 
 
 
