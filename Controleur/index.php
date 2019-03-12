@@ -120,7 +120,20 @@ $taxes= $tps + $tvq;
 return $taxes;
 
 }
+$tableauInteretPrixMoinsQue10000=array('12' => 6.95, '24' => 6.95, '36' => 6.25, '48' => 6.10, '60'=> 6.00);
 
+$tableauInteretPrixPlusQue10000=array('12' => 7.25, '24' => 7.25, '36' => 6.30, '48' => 6.30, '60'=> 5.85);
+
+function listeDeroulante($tableauInteretPrixMoinsQue10000){
+        foreach($tableauInteretPrixMoinsQue10000 as $key => $value) {
+            
+            echo '<option>'.$key." mois-".$value."%".'</option>';
+            echo '<br><br>';
+        
+            
+        
+    }
+}
 
 
 
