@@ -31,8 +31,12 @@
     $couts_final = $couts - $accompte;
     $taxes_finaux = calculerTaxes($couts_final);
     /* $interets = calculerInterets($_POST['interets'], $couts);  */
-    echo $_POST['interets'];
-
+    if(isset($_POST['calcul']))
+{
+  $valeur = $_POST['interets'];
+}
+   echo $valeur;
+    
 ?>
 
     </head>
