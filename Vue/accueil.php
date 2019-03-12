@@ -1,6 +1,6 @@
 <?php
 include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
-
+sort($tab_marques);
 ?>
 
 <!DOCTYPE html>
@@ -31,30 +31,41 @@ include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
     <h1>Bienvenue sur notre site d'achat de voitures en ligne</h1><br>
   
     <form method="POST" action="#">
+
+<!--$marque = (isset($_POST['marque']))? $_POST['marque'] : "Honda";
+$valider = (isset($_POST['validation']))? $_POST['validation'] ; null;
+if($valider != null) {
+  $modele = $_POST['modele'];
+  $marque1 = $_POST['marque'];
+  header("location")
+  } -->
+
+
   <!--------------- Liste deroulante marque ------------------>
+  <form method="POST" action="#">
+
   Marques de voitures: <select name="listeMarque" value="">
-    <?php
-    
-    sort($tab_marques);
-    choisirMarques($tab_marques);
-    $selected_value = $_POST['listeMarque'];
-/*if(empty($selected_value)){
+<?php
 
-        echo "NOT WORKING OSTI";
-
-      }
-      else{
-        echo "Working";
-      }*/
-    ?>
+  foreach($tab_marques as $value){
+    if($value == $marque){
+        echo "<option value='$value' selected>$value</option>";
+        }
+        else{
+            echo "<option value='$value'>$value</option>";
+        }
+    }
+?>
+<input type="submit" name="rechercher" value="Rechercher" />
 
   <!--------------- Liste deroulante modele ------------------>
   Marques de voitures: <select name="listeMarque" value="">
   <?php
-    $selected_value = $_POST['listeMarque'];
-    $modele = choisirModele($selected_value);
-    sort($modele);
-
+  foreach($tabs_modele as $marque => $listeModele) {
+    foreach($listeModele as $modele) {
+      echo '<option value="'.$modele.'">'.$modele. '</option>';
+    }
+  }
  ?>
  <input type="submit" name="submit" value="Get Selected Values" />
   </form>
