@@ -32,25 +32,31 @@ include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
   
     <form method="POST" action="#">
   <!--------------- Liste deroulante marque ------------------>
-  <select name="listeMarque">
+  Marques de voitures: <select name="listeMarque" value="">
     <?php
     
     sort($tab_marques);
     choisirMarques($tab_marques);
-
-    
-      $selected_value = $_POST['listeMarque'];
-      if(empty($selected_value)){
+    $selected_value = $_POST['listeMarque'];
+/*if(empty($selected_value)){
 
         echo "NOT WORKING OSTI";
 
       }
       else{
         echo "Working";
-      }
-    
+      }*/
     ?>
- <!-- <input type="submit" name="submit" value="Get Selected Values" /> -->
+
+  <!--------------- Liste deroulante modele ------------------>
+  Marques de voitures: <select name="listeMarque" value="">
+  <?php
+    $selected_value = $_POST['listeMarque'];
+    $modele = choisirModele($selected_value);
+    sort($modele);
+
+ ?>
+ <input type="submit" name="submit" value="Get Selected Values" />
   </form>
 
     

@@ -47,3 +47,26 @@ $tab_marques = array($tab_marqueHonda[0],$tab_marqueToyota[0],$tab_marqueChevrol
 
 /*--------------- fonction liste deroulante marque ------------------*/
 
+function choisirModele($marque) {
+    foreach($tableau as $modele => $nomModele) {
+        switch($marque) {
+            case 'Honda':
+            echo '<option value="'.$tab_marqueHonda['$modele'].'">'.$tab_marqueHonda['$nomModele']. '</option>';
+            echo '<br><br>';
+            break;
+            case 'Toyota':
+            echo '<option value="'.$tab_marqueToyota['$modele'].'">'.$tab_marqueToyota['$nomModele']. '</option>';
+            echo '<br><br>';
+            break; 
+            case 'Chevrolet':
+            echo '<option value="'.$tab_marqueChevrolet['$modele'].'">'.$tab_marqueChevrolet['$nomModele']. '</option>';
+            echo '<br><br>';
+            break;
+            case 'BMW':
+            echo '<option value="'.$tab_marqueBmw['$modele'].'">'.$tab_marqueBmw['$nomModele']. '</option>';
+            echo '<br><br>';
+            break;
+        }
+    }
+}
+?>
