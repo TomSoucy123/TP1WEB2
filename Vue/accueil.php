@@ -30,19 +30,27 @@ include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
     </nav> 
     <h1>Bienvenue sur notre site d'achat de voitures en ligne</h1><br>
   
-    <form method="POST" action="voitures.php">
+    <form method="POST" action="#">
   <!--------------- Liste deroulante marque ------------------>
-  <select name="listemarque">
+  <select name="listeMarque">
     <?php
     
     sort($tab_marques);
     choisirMarques($tab_marques);
-    if(isset($_POST['listemarque'])){
-      $nom = $_POST['listemarque'];
-      header('Location:voitures.php?name=' .$nom);
-    }
+
+    
+      $selected_value = $_POST['listeMarque'];
+      if(empty($selected_value)){
+
+        echo "NOT WORKING OSTI";
+
+      }
+      else{
+        echo "Working";
+      }
+    
     ?>
- 
+ <!-- <input type="submit" name="submit" value="Get Selected Values" /> -->
   </form>
 
     
