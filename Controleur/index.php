@@ -5,6 +5,7 @@ $prix = 10000;
 
 
 function determinerLeTauxDinteret($dureePret, $prix){
+        $interet = 0;
         if($prix <= 10000){
                 switch($dureePret){
                     case "12";
@@ -23,6 +24,7 @@ function determinerLeTauxDinteret($dureePret, $prix){
                         $interet = 0.600;
                         break;
                 }
+                
             }
             else{
                 switch($dureePret){
@@ -42,10 +44,12 @@ function determinerLeTauxDinteret($dureePret, $prix){
                         $interet = 0.585;
                         break;
                 }
+                
             }
             $tauxInteret = $interet/100;
             return $tauxInteret;
         }
+       
 /*     $tauxInteret = 0;
 if($dureePret == 24 || $dureePret == 12 && $capitalInvesti <= 10000){
     $tauxInteret = 6.95;
@@ -105,6 +109,7 @@ $mensualite = $premiereLigne/$deuxiemeLigne;
 return $mensualite;
 }
 
+
 function calculerInterets($dureePret,$capitalInvesti){
         $mensualite = calcul_mensualite($dureePret,$capitalInvesti);
         $interets = ($mensualite * $dureePret) - $capitalInvesti;
@@ -127,7 +132,7 @@ $tableauInteretPrixPlusQue10000=array('12' => 7.25, '24' => 7.25, '36' => 6.30, 
 function listeDeroulante($tableauInteretPrixMoinsQue10000){
         foreach($tableauInteretPrixMoinsQue10000 as $key => $value) {
             
-            echo '<option>'.$key." mois-".$value."%".'</option>';
+            echo '<option value"'.$key.'">'.$key." mois-".$value."%".'</option>';
             echo '<br><br>';
         
             
