@@ -44,7 +44,7 @@ if($valider != null) {
   <!--------------- Liste deroulante marque ------------------>
   <form method="POST" action="#">
 
-  Marques de voitures: <select name="listeMarque" value="">
+  Marques de voitures: <select name="listeMarque" value=<?php echo $valeur_selectionnee ?>>
 <?php
 
   foreach($tab_marques as $value){
@@ -55,13 +55,14 @@ if($valider != null) {
             echo "<option value='$value'>$value</option>";
         }
     }
+  $valeur_selectionnee=$_POST["listeMarque"];
+  echo $valeur_selectionnee;
 ?>
 <input type="submit" name="rechercher" value="Rechercher" />
 
   <!--------------- Liste deroulante modele ------------------>
   Marques de voitures: <select name="listeMarque" value="">
   <?php
-  
  ?>
  <input type="submit" name="submit" value="Get Selected Values" />
   </form>
