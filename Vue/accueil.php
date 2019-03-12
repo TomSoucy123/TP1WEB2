@@ -1,6 +1,6 @@
 <?php
 include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
-
+sort($tab_marques);
 ?>
 
 <!DOCTYPE html>
@@ -31,30 +31,34 @@ include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
     <h1>Bienvenue sur notre site d'achat de voitures en ligne</h1><br>
   
     <form method="POST" action="#">
+
+<?php
+$marque = (isset($_POST['marque']))? $_POST['marque'] : "Honda";
+$valider = (isset($_POST['validation']))? $_POST['validation'] : null;
+?>
+
   <!--------------- Liste deroulante marque ------------------>
-  Marques de voitures: <select name="listeMarque" value="">
-    <?php
-    
-    sort($tab_marques);
-    choisirMarques($tab_marques);
-    $selected_value = $_POST['listeMarque'];
-/*if(empty($selected_value)){
+  <form method="POST" action="#">
 
-        echo "NOT WORKING OSTI";
+  Marques de voitures: <select name="listeMarque" value=<?php echo $valeur_selectionnee ?>>
+<?php
 
-      }
-      else{
-        echo "Working";
-      }*/
-    ?>
+  foreach($tab_marques as $value){
+    if($value == $marque){
+        echo "<option value='$value' selected>$value</option>";
+        }
+        else{
+            echo "<option value='$value'>$value</option>";
+        }
+    }
+  $valeur_selectionnee=$_POST["listeMarque"];
+  echo $valeur_selectionnee;
+?>
+<input type="submit" name="rechercher" value="Rechercher" />
 
   <!--------------- Liste deroulante modele ------------------>
   Marques de voitures: <select name="listeMarque" value="">
   <?php
-    $selected_value = $_POST['listeMarque'];
-    $modele = choisirModele($selected_value);
-    sort($modele);
-
  ?>
  <input type="submit" name="submit" value="Get Selected Values" />
   </form>
