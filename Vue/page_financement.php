@@ -41,10 +41,16 @@
     <br>
     <form name='formulaire' method='post' action=''>
     <label for='nom'>Saisissez votre accompte :</label>           <input type='number' name="accompte" value="<?php echo $accompte ?>" />
-    <input type='submit' name="calcul" value="Calculer" /> <br><br>
+     <br><br>
     Intérêts: <select name="interets" value=""> 
+    <?php
+        listeDeroulante($tableauInteretPrixMoinsQue10000);
+        listeDeroulante($tableauInteretPrixPlusQue10000);
+        ?>
+        </select>
+        <input type='submit' name="calcul" value="Calculer" />
+        <br><br>
 
-    </select>
 
 
   
