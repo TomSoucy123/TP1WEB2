@@ -26,15 +26,18 @@
     </style>
     <?php
     include ('\wamp64\www\tp1WEB2\Controleur\index.php');
-    $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : null;
+    $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : $_POST['accompte'];
     $couts = 200;
     $couts_final = $couts - $accompte;
-    $taxes_finaux = calculerTaxes($couts_final);
+    $taxes = calculerTaxes($couts);
+   $taxes_finaux = calculerTaxes($couts_final);
     /* $interets = calculerInterets($_POST['interets'], $couts);  */
-    if(isset($_POST['calcul']))
+    if(isset($_POST['interets']))
 {
   $valeur = $_POST['interets'];
-  header('Location:page_financement.php?interet=' .$valeur);
+  echo ($valeur);
+  
+  /* header('Location:page_financement.php?interet=' .$valeur); */
 }
    
     
@@ -45,10 +48,10 @@
     
     <h1>Voici votre facutre et ses details</h2>
     <br>
-    <form name='formulaire' method='post' action=''>
+    <form name='formulaire' method='post' action='page_financement.php'>
     <label for='nom'>Saisissez votre accompte :</label>           <input type='number' name="accompte" value="<?php echo $accompte ?>" />
      <br><br>
-    Intérêts: <select name="interets" value=""> 
+    Intérêts: <select name="interets"> 
     <?php
     if($couts <= 10000){
 
