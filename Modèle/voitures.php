@@ -1,12 +1,13 @@
 <?php
 
 $tab_marques = array('Honda','Chevrolet','Toyota','BMW');
+
 $tabs_modele = array("Honda" => array ("civic","accord","cr-v"),
                      "Toyota" => array ("camry","corolla","yaris"),
                      "BMW" => array("330xi","m4","z4"),
                      "Chevrolet" => array("malibu","colorado","corvette"),
                     );
-                    /* print_r($tabs_modele); */
+                    
 
 $tab_marqueVoituresHonda = array(
     0=>array('marque' => 'Honda'),
