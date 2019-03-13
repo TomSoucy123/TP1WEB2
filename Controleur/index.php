@@ -133,7 +133,7 @@ $tableauInteretPrixPlusQue10000=array('12' => 7.25, '24' => 7.25, '36' => 6.30, 
 function listeDeroulante($tableauInteretPrixMoinsQue10000){
         foreach($tableauInteretPrixMoinsQue10000 as $key => $value) {
             
-            echo '<option value"'.$key.'">'.$key." mois-".$value."%".'</option>';
+            echo '<option value="'.$key.'">'.$key." mois-".$value."%".'</option>';
             echo '<br><br>';
         
             
