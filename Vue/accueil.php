@@ -67,7 +67,7 @@ if($valider !=null){
 
   Marques de voitures: <select name="modele">
   <?php
- foreach($tab_modele as $key => $marque2){
+ foreach($tabs_modele as $value){
     if($value == $modele){
       echo "<option value='$value' selected>$value</option>";
         }
@@ -80,6 +80,6 @@ if($valider !=null){
 
  ?> 
  <input type="submit" name="submit" value="Get Selected Values" />
-      
+ </form>   
 
 </html>
