@@ -1,4 +1,6 @@
 <?php
+
+/*------------------- financement ----------------*/
 $capitalInvesti = 10000;
 $dureePret = 60;
 $prix = 10000;

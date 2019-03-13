@@ -67,10 +67,8 @@ if(isset($_POST['envoyer'])){
  
 ?>
 <input type="submit" name="rechercher" value="Rechercher" />
-</form>
-
-<form method="POST">
-
+<br><br>
+  <!--------------- Liste deroulante modele ------------------>
   Modeles de voitures: <select name="modele">
   <?php
 
@@ -84,8 +82,8 @@ if(isset($_POST['envoyer'])){
       }
       }
       
- ?> 
- <input type="submit" name="envoyer" value="Voir les modeles" />
+ ?>
+<input type="submit" name="envoyer" value="Voir les modeles" />
  </form>   
 
 </html>
