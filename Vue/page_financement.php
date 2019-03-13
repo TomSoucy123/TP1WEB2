@@ -34,8 +34,9 @@
     if(isset($_POST['calcul']))
 {
   $valeur = $_POST['interets'];
+  header('Location:page_financement.php?interet=' .$valeur);
 }
-   echo $valeur;
+   
     
 ?>
 
