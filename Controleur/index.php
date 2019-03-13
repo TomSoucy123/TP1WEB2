@@ -1,4 +1,8 @@
 <?php
+include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
+?>
+
+<?php
 /*------------------- financement ----------------*/
 $capitalInvesti = 10000;
 $dureePret = 60;
@@ -181,19 +185,19 @@ $mensualite = calcul_mensualite($dureePret,$capitalInvesti);
 echo $mensualite;  */
  
 /*---------------------- selection.php ------------------------*/
-include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
+
 function selectionTableau($marque) {
     switch($marque) {
-        case 'Honda';
+        case 'Honda':
         return $tab_marqueVoituresHonda;
         break;
-        case 'Chevrolet';
+        case 'Chevrolet':
         return $tab_marqueVoituresChevrolet;
         break;
-        case 'Toyota';
+        case 'Toyota':
         return $tab_marqueVoituresToyota;
         break;
-        case 'BMW';
+        case 'BMW':
         return $tab_marqueVoituresBmw;
         break;
     }
