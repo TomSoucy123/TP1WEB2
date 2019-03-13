@@ -27,18 +27,22 @@
     <?php
     include ('\wamp64\www\tp1WEB2\Controleur\index.php');
     $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : $_POST['accompte'];
-    $couts = 200;
+    $dureeDuPret = (isset($_POST['interets']))? $_POST['interets'] : $_POST['interets'];
+    $couts = 10000;
     $couts_final = $couts - $accompte;
     $taxes = calculerTaxes($couts);
    $taxes_finaux = calculerTaxes($couts_final);
+   $interets = calculerInterets($dureeDuPret, $couts);
+   $interets_finaux = calculerInterets($dureeDuPret, $couts_final);
+   
     /* $interets = calculerInterets($_POST['interets'], $couts);  */
-    if(isset($_POST['interets']))
+ /*    if(isset($_POST['interets']))
 {
-  $valeur = $_POST['interets'];
-  echo ($valeur);
+  $dureeDesMois = $_POST['interets'];
+  
   
   /* header('Location:page_financement.php?interet=' .$valeur); */
-}
+/* }  */
    
     
 ?>
@@ -72,8 +76,8 @@
     <table>
   <tr> 
     <td>Coût :</td>
-    <td>200$</td>
-    <td>200$</td>
+    <td><?php echo $couts."$"?></td>
+    <td><?php echo $couts."$"; ?></td>
   </tr>
   
   <tr>
@@ -90,8 +94,8 @@
   
   <tr>
     <td>Intérêt :</td>
-    <td>500$</td>
-    <td>500$</td>
+    <td><?php echo $interets."$"; ?></td>
+    <td><?php echo $interets_finaux."$"; ?></td>
     
   </tr>
   <tr>
