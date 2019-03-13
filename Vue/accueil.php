@@ -33,53 +33,59 @@ sort($tab_marques);
     
 
 <?php
-$marque = (isset($_POST['listeMarque']))? $_POST['listeMarque'] : "Honda";
-$valider = (isset($_POST['validation']))? $_POST['validation'] : null;
+$marque = (isset($_POST['listeMarque']))? $_POST['listeMarque'] : $_GET['marque'];
+$valider = (isset($_POST['rechercher']))? $_POST['rechercher'] : null;
 if($valider !=null){
 
-  $modele = $_POST['modele'];
+  
   $marque2 = $_POST['listeMarque'];
-  header('Location:selection.php?marque=' .$marque2. '&modele=' .$modele);
+  header('Location:accueil.php?marque=' .$marque2);
 }
+
+if(isset($_POST['envoyer'])){
+  $modele_choisi = $_POST['modele']; 
+  $marque_choisi = $marque;
+  header('Location:selection.php?marque=' .$marque_choisi. '&modele=' .$modele_choisi);
+} 
+
 ?>
 
   <!--------------- Liste deroulante marque ------------------>
-  <form method="POST" action="accueil.php">
+  <form method="POST">
 
-  Marques de voitures: <select name="listeMarque">
+  Marques de voitures: <select name="listeMarque" value ="<?php $_POST['listeMarque']; ?>">
 <?php
 
-  foreach($tab_marques as $value){
-    if($value == $marque){
-        echo "<option value='$value' selected>$value</option>";
+  foreach($tab_marques as $valeur){
+    if($valeur == $marque){
+        echo "<option value='$valeur' selected>$valeur</option>";
         }
         else{
-            echo "<option value='$value'>$value</option>";
+            echo "<option value='$valeur'>$valeur</option>";
         }
     }
- /*  $valeur_selectionnee=$_POST["listeMarque"];
-  echo $valeur_selectionnee; */
+ 
 ?>
 <input type="submit" name="rechercher" value="Rechercher" />
 </form>
 
-<form method="POST" action="selection.php">
+<form method="POST">
 
-  Marques de voitures: <select name="modele">
+  Modeles de voitures: <select name="modele">
   <?php
- foreach($tabs_modele as $value){
-    if($value == $modele){
-      echo "<option value='$value' selected>$value</option>";
-        }
-        else{
-            echo "<option value='$value'>$value</option>";
-        }
-    
-    }
 
+      foreach($tabs_modele as $cle  =>$valeur ){
+       
+           if($_GET['marque'] == $cle){ 
+            for($i = 0; $i < count($tabs_modele); $i++){
+      echo "<option value='$valeur[$i]' selected>$valeur[$i]</option>";
+        }
 
+      }
+      }
+      
  ?> 
- <input type="submit" name="submit" value="Get Selected Values" />
+ <input type="submit" name="envoyer" value="Voir les modeles" />
  </form>   
 
 </html>
