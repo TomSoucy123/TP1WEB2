@@ -30,17 +30,23 @@ sort($tab_marques);
     </nav> 
     <h1>Bienvenue sur notre site d'achat de voitures en ligne</h1><br>
   
-    <form method="POST" action="#">
+    
 
 <?php
-$marque = (isset($_POST['marque']))? $_POST['marque'] : "Honda";
+$marque = (isset($_POST['listeMarque']))? $_POST['listeMarque'] : "Honda";
 $valider = (isset($_POST['validation']))? $_POST['validation'] : null;
+if($valider !=null){
+
+  $modele = $_POST['modele'];
+  $marque2 = $_POST['listeMarque'];
+  header('Location:selection.php?marque=' .$marque2. '&modele=' .$modele);
+}
 ?>
 
   <!--------------- Liste deroulante marque ------------------>
-  <form method="POST" action="#">
+  <form method="POST" action="accueil.php">
 
-  Marques de voitures: <select name="listeMarque" value=<?php echo $valeur_selectionnee ?>>
+  Marques de voitures: <select name="listeMarque">
 <?php
 
   foreach($tab_marques as $value){
@@ -51,18 +57,29 @@ $valider = (isset($_POST['validation']))? $_POST['validation'] : null;
             echo "<option value='$value'>$value</option>";
         }
     }
-  $valeur_selectionnee=$_POST["listeMarque"];
-  echo $valeur_selectionnee;
+ /*  $valeur_selectionnee=$_POST["listeMarque"];
+  echo $valeur_selectionnee; */
 ?>
 <input type="submit" name="rechercher" value="Rechercher" />
+</form>
 
-  <!--------------- Liste deroulante modele ------------------>
-  Marques de voitures: <select name="listeMarque" value="">
+<form method="POST" action="selection.php">
+
+  Marques de voitures: <select name="modele">
   <?php
- ?>
- <input type="submit" name="submit" value="Get Selected Values" />
-  </form>
-
+ foreach($tab_modele as $key => $marque2){
+    if($value == $modele){
+      echo "<option value='$value' selected>$value</option>";
+        }
+        else{
+            echo "<option value='$value'>$value</option>";
+        }
     
+    }
+
+
+ ?> 
+ <input type="submit" name="submit" value="Get Selected Values" />
+      
 
 </html>
