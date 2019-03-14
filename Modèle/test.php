@@ -6,7 +6,7 @@ echo '2- ' . calcul_mensualite(60,10000) . '<br>';//169.22
 //http://www4.bmo.com/popup/prets/Calculator.html
 
 echo "<br><br>";
-echo '1- ' . calculerInterets(24,10000) . '<br>'; 
-echo '2- ' . calculerInterets(60,10000) . '<br>'; 
+echo '1- ' . calculerInterets(15000,60,0, 5.85) . '<br>'; 
+
 
 ?>
