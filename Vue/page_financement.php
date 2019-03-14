@@ -20,10 +20,17 @@
     td{
         width: 200px;
     }
-    
-    
-
     </style>
+
+     <!--------------- Barre de navigation ------------------>
+     <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="D:\wamp64\www\TP1WEB2\Vue\Dealer-Car.jpg" width="200" height="120" class="d-inline-block align-top" alt="car-brand">
+      </a>
+    </nav> 
+    <h1>Bienvenue sur notre site d'achat de voitures en ligne</h1><br>
+
+    
     <?php
     include ('\wamp64\www\tp1WEB2\Controleur\index.php');
     $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : $_POST['accompte'];
