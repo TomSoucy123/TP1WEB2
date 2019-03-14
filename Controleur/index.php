@@ -142,20 +142,6 @@ function listeDeroulante($tableauInteretPrixMoinsQue10000){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* $capitalInvesti = 5000;
 $dureeDuPret = 36;
 
@@ -199,11 +185,10 @@ function selectionTableau($marque) {
     }
 }
 
-function slectionModele($tableau) {
+function slectionVoiture($tableau) {
     for($i = 0;$i < sizeof($tableau);$i++){
         return $tableau['modele'];
     }
 }
 
-function 
 ?>
