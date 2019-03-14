@@ -35,12 +35,15 @@
     include ('\wamp64\www\tp1WEB2\Controleur\index.php');
     $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : $_POST['accompte'];
     $dureeDuPret = (isset($_POST['interets']))? $_POST['interets'] : $_POST['interets'];
+    echo $dureeDuPret;
     $couts = 10000;
     $couts_final = $couts - $accompte;
     $taxes = calculerTaxes($couts);
    $taxes_finaux = calculerTaxes($couts_final);
-   $interets = calculerInterets($dureeDuPret, $couts);
-   $interets_finaux = calculerInterets($dureeDuPret, $couts_final);
+   $taux = determinerLeTauxDinteret($dureeDuPret, $couts);
+   $taux_interet = $taux * 1000;
+   $interets = calculerInterets($couts, $dureeDuPret,$accompte,$taux_interet);
+   $interets_finaux = calculerInterets($couts_final , $dureeDuPret, $accompte, $taux_interet);
    
     /* $interets = calculerInterets($_POST['interets'], $couts);  */
  /*    if(isset($_POST['interets']))
