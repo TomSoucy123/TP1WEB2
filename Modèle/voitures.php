@@ -32,30 +32,5 @@ $tab_marqueVoituresBmw = array(
     1=>array('modele' => 'm4', 'prix' => 75990, 'description' => "Bmw m4 2019, neuve, venez la voir !", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\m4.JPG" width="280" height="125" title="m4" alt="m4" />'),
     2=>array('modele' => 'z4', 'prix' => 21900, 'description' => "Bmw z4 2007, excellent état, seulement 46 000km", 'photo' => '<img src="D:\wamp64\www\TP1WEB2\Modèle\photo voiture tpweb\z4.JPG" width="280" height="125" title="z4" alt="z4" />'));
 
-/*--------------- fonction liste deroulante marque ------------------*/
-
-/*$tableau = array($tab_marqueHonda,$tab_marqueToyota,$tab_marqueChevrolet,$tab_marqueBmw);
-function choisirModele($marque) {
-    foreach($tableau as $marquetab => $array) {
-        foreach($array as $modele => $nomModele)
-        switch($marque) {
-            case 'Honda':
-            echo '<option value="'.$tab_marqueHonda['modele'].'">'.$tab_marqueHonda['modele']. '</option>';
-            echo '<br><br>';
-            break;
-            case 'Toyota':
-            echo '<option value="'.$tab_marqueToyota['modele'].'">'.$tab_marqueToyota['modele']. '</option>';
-            echo '<br><br>';
-            break; 
-            case 'Chevrolet':
-            echo '<option value="'.$tab_marqueChevrolet['modele'].'">'.$tab_marqueChevrolet['modele']. '</option>';
-            echo '<br><br>';
-            break;
-            case 'BMW':
-            echo '<option value="'.$tab_marqueBmw['modele'].'">'.$tab_marqueBmw['modele']. '</option>';
-            echo '<br><br>';
-            break;
-        }
-    }*/
 
 ?>

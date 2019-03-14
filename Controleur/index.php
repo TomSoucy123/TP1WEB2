@@ -201,7 +201,9 @@ function selectionTableau($marque) {
 
 function slectionModele($tableau) {
     for($i = 0;$i < sizeof($tableau);$i++){
-        echo
+        return $tableau['modele'];
     }
 }
+
+function 
 ?>
