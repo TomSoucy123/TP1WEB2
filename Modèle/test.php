@@ -8,5 +8,5 @@ echo '2- ' . calcul_mensualite(60,10000) . '<br>';//169.22
 echo "<br><br>";
 echo '1- ' . calculerInterets(15000,60,0, 5.85) . '<br>'; 
 
-
+echo '1- ' . trouverTauxInteret(24, 5000) . '<br>'; 
 ?>
