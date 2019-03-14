@@ -1,4 +1,8 @@
 <?php
+include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
+
+?>
+<?php
 /*------------------- financement ----------------*/
 $capitalInvesti = 10000;
 $dureePret = 60;
@@ -100,7 +104,11 @@ echo $tauxInteret;
 return $tauxInteret;
 } */
 
-
+function trouverTauxInteret($dureePret, $prix){
+    $taux_interet = determinerLeTauxDinteret($dureePret, $prix);
+    $taux_interet = $taux_interet * 1000;
+    return $taux_interet;
+}
 
 function calcul_mensualite($dureePret,$capitalInvesti){
 $interet = determinerLeTauxDinteret($dureePret, $capitalInvesti);
@@ -111,11 +119,10 @@ return $mensualite;
 }
 
 
-function calculerInterets($dureePret,$capitalInvesti){
-        $mensualite = calcul_mensualite($dureePret,$capitalInvesti);
-        $interets = ($mensualite * $dureePret) - $capitalInvesti;
-        
-        return $interets;
+function calculerInterets($prix,$mois,$accompte,$interet){
+        $valeur_temporaire = ($prix-$accompte)*pow(1+$interet/12/100,$mois);
+        $interet = $valeur_temporaire - $prix;
+        return $interet;
         
 }
 
@@ -126,9 +133,7 @@ $taxes= $tps + $tvq;
 return $taxes;
 
 }
-$tableauInteretPrixMoinsQue10000=array('12' => 6.95, '24' => 6.95, '36' => 6.25, '48' => 6.10, '60'=> 6.00);
 
-$tableauInteretPrixPlusQue10000=array('12' => 7.25, '24' => 7.25, '36' => 6.30, '48' => 6.30, '60'=> 5.85);
 
 function listeDeroulante($tableauInteretPrixMoinsQue10000){
         foreach($tableauInteretPrixMoinsQue10000 as $key => $value) {
@@ -141,7 +146,10 @@ function listeDeroulante($tableauInteretPrixMoinsQue10000){
     }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 393dff22b7604b8e4b4782b84a295f0f992aeb71
 /* $capitalInvesti = 5000;
 $dureeDuPret = 36;
 
@@ -167,28 +175,36 @@ $mensualite = calcul_mensualite($dureePret,$capitalInvesti);
 echo $mensualite;  */
  
 /*---------------------- selection.php ------------------------*/
-include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
-function selectionTableau($marque) {
+
+ function selectionTableau($marque) {
+     $tableau = array();
     switch($marque) {
         case 'Honda';
-        return $tab_marqueVoituresHonda;
+        $tableau = $tab_marqueVoituresHonda;
         break;
         case 'Chevrolet';
-        return $tab_marqueVoituresChevrolet;
+        $tableau = $tab_marqueVoituresChevrolet;
         break;
         case 'Toyota';
-        return $tab_marqueVoituresToyota;
+        $tableau = $tab_marqueVoituresToyota;
         break;
         case 'BMW';
-        return $tab_marqueVoituresBmw;
+        $tableau = $tab_marqueVoituresBmw;
         break;
     }
-}
+    return $tableau;
+} 
 
+<<<<<<< HEAD
 function slectionVoiture($tableau) {
+=======
+ function selectionModele($tableau) {
+>>>>>>> 393dff22b7604b8e4b4782b84a295f0f992aeb71
     for($i = 0;$i < sizeof($tableau);$i++){
         return $tableau['modele'];
     }
-}
+} 
+
+
 
 ?>
