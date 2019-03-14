@@ -35,4 +35,5 @@ $tab_marqueVoituresBmw = array(
     $tableauInteretPrixMoinsQue10000=array('12' => 6.95, '24' => 6.95, '36' => 6.25, '48' => 6.10, '60'=> 6.00);
 
     $tableauInteretPrixPlusQue10000=array('12' => 7.25, '24' => 7.25, '36' => 6.30, '48' => 6.30, '60'=> 5.85);
+
 ?>

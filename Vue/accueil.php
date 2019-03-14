@@ -27,7 +27,7 @@ sort($tab_marques);
       <a class="navbar-brand" href="#">
         <img src="D:\wamp64\www\TP1WEB2\Vue\Dealer-Car.jpg" width="200" height="120" class="d-inline-block align-top" alt="car-brand">
       </a>
-    </nav> 
+    </nav>
     <h1>Bienvenue sur notre site d'achat de voitures en ligne</h1><br>
   
     
@@ -80,7 +80,7 @@ if(isset($_POST['envoyer'])){
         }
 
       }
-      }
+    }
       
  ?>
 <input type="submit" name="envoyer" value="Voir les modeles" />

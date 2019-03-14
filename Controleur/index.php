@@ -1,7 +1,4 @@
-<?php
-include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
 
-?>
 <?php
 /*------------------- financement ----------------*/
 $capitalInvesti = 10000;
@@ -146,10 +143,6 @@ function listeDeroulante($tableauInteretPrixMoinsQue10000){
     }
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 393dff22b7604b8e4b4782b84a295f0f992aeb71
 /* $capitalInvesti = 5000;
 $dureeDuPret = 36;
 
@@ -175,31 +168,32 @@ $mensualite = calcul_mensualite($dureePret,$capitalInvesti);
 echo $mensualite;  */
  
 /*---------------------- selection.php ------------------------*/
+include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
 
+$tableauHonda = $tab_marqueVoituresHonda;
+$tableauBMW = $tab_marqueVoituresBmw;
+$tableauChevrolet = $tab_marqueVoituresChevrolet;
+$tableauToyota = $tab_marqueVoituresToyota;
  function selectionTableau($marque) {
-     $tableau = array();
+    $tableau = array();
     switch($marque) {
         case 'Honda';
-        $tableau = $tab_marqueVoituresHonda;
+        $tableau = $tableauHonda;
         break;
         case 'Chevrolet';
-        $tableau = $tab_marqueVoituresChevrolet;
+        $tableau = $tableauChevrolet;
         break;
         case 'Toyota';
-        $tableau = $tab_marqueVoituresToyota;
+        $tableau = $tableauToyota;
         break;
         case 'BMW';
-        $tableau = $tab_marqueVoituresBmw;
+        $tableau = $tableauBMW;
         break;
     }
     return $tableau;
 } 
 
-<<<<<<< HEAD
 function slectionVoiture($tableau) {
-=======
- function selectionModele($tableau) {
->>>>>>> 393dff22b7604b8e4b4782b84a295f0f992aeb71
     for($i = 0;$i < sizeof($tableau);$i++){
         return $tableau['modele'];
     }
