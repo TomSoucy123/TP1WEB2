@@ -104,7 +104,11 @@ echo $tauxInteret;
 return $tauxInteret;
 } */
 
-
+function trouverTauxInteret($dureePret, $prix){
+    $taux_interet = determinerLeTauxDinteret($dureePret, $prix);
+    $taux_interet = $taux_interet * 1000;
+    return $taux_interet;
+}
 
 function calcul_mensualite($dureePret,$capitalInvesti){
 $interet = determinerLeTauxDinteret($dureePret, $capitalInvesti);
