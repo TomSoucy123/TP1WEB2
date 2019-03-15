@@ -4,7 +4,7 @@ $tableauVoitures = array();
 /* echo  $_GET['marque'] . " de " .$_GET['modele']; */
 $marque =  $_GET['marque'];
 $modele = $_GET['modele'];
-$tableauVoitures =selectionTableauDeMarque ($marque);
+$tableauVoitures =selectionModele($modele,$marque);
 /* $tableauVoitures = selectionTableau($marque); */
 print_r($tableauVoitures);
 
