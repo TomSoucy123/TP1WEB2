@@ -1,5 +1,5 @@
 <?php
-include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
+include ('..\Modèle\voitures.php');
 sort($tab_marques);
 ?>
 
