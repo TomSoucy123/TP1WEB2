@@ -1,9 +1,11 @@
 
 <?php
+include ('..\Modèle\voitures.php');
 /*------------------- financement ----------------*/
 $capitalInvesti = 10000;
 $dureePret = 60;
 $prix = 10000;
+
 
 
 function determinerLeTauxDinteret($dureePret, $prix){
@@ -168,36 +170,55 @@ $mensualite = calcul_mensualite($dureePret,$capitalInvesti);
 echo $mensualite;  */
  
 /*---------------------- selection.php ------------------------*/
-include ('\wamp64\www\TP1WEB2\Modèle\voitures.php');
 
-$tableauHonda = $tab_marqueVoituresHonda;
-$tableauBMW = $tab_marqueVoituresBmw;
-$tableauChevrolet = $tab_marqueVoituresChevrolet;
-$tableauToyota = $tab_marqueVoituresToyota;
- function selectionTableau($marque) {
-    $tableau = array();
+
+
+
+/* function selectionModele($modele){
+    include ('..\Modèle\voitures.php');
+    
+   
+for($i = 0; $i < 4; $i++){
+    foreach($tab_marqueVoituresToyota[$i] as $value){
+   if($value == $modele){
+       $tableauAretourner = $tab_marqueVoituresToyota[$i];
+
+}
+}
+
+}
+return $tableauAretourner;
+
+} */
+
+
+
+ function selectionTableauDeMarque($marque) {
+    include ('..\Modèle\voitures.php');
+    $tableau = array(array());
+    
     switch($marque) {
         case 'Honda';
-        $tableau = $tableauHonda;
+        $tableau = $tab_marqueVoituresHonda;
         break;
         case 'Chevrolet';
-        $tableau = $tableauChevrolet;
+        $tableau = $tab_marqueVoituresChevrolet;
         break;
         case 'Toyota';
-        $tableau = $tableauToyota;
+        $tableau = $tab_marqueVoituresToyota;
         break;
         case 'BMW';
-        $tableau = $tableauBMW;
+        $tableau = $tab_marqueVoituresBmw;
         break;
     }
     return $tableau;
 } 
 
-function slectionVoiture($tableau) {
+/* function slectionVoiture($tableau) {
     for($i = 0;$i < sizeof($tableau);$i++){
         return $tableau['modele'];
     }
-} 
+}  */
 
 
 
