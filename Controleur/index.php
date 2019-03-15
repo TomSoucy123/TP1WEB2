@@ -237,34 +237,42 @@ function afficherImageDuModele($marque, $modele){
     include ('..\Modèle\voitures.php');
     $photo = recupererPhotoDuModele($modele,$marque);
     $image_source = imagecreatefromjpeg($photo);
-    $image_dest = imagecreatetruecolor(90,90);
+    $image_dest = imagecreatetruecolor(400,400);
     
-    
+    $image_source1 = imagecreatefromjpeg($photo);
+    $image_dest1 = imagecreatetruecolor(150,150);
     
     //Largeur et la hauteur de ma source
     $haut_source = imagesy($image_source);
     $larg_source = imagesx($image_source);
+
+    $haut_source1 = imagesy($image_source1);
+    $larg_source1 = imagesx($image_source1);
     
     
     
-    $larg_dest = 90;
-    $haut_dest = 90;
+    $larg_dest = 400;
+    $haut_dest = 400;
+    $larg_dest1 = 150;
+    $haut_dest1 = 150;
     
-    
+    imagecopyresampled($image_dest1,$image_source1,0,0,0,0,$larg_dest1,$haut_dest1,$larg_source1,$haut_source1);
     imagecopyresampled($image_dest,$image_source,0,0,0,0,$larg_dest,$haut_dest,$larg_source,$haut_source);
     
     //Enregistrement de la miniature
     imagejpeg($image_dest,'miniAuto.jpg');
+    imagejpeg($image_dest1,'auto.jpg');
     
     
     //echo "<img src= 'Mini Spidey.jpg'> name='miniature' />";
-    echo "<a href=$photo> <img src= $photo> </a>";
-    echo "<a href='miniAuto.jpg'> <img src= 'miniauto.jpg'> </a>";
+    echo "<a href='miniAuto.jpg'> <img src='auto.jpg'> </a>";
     
     
     
     imagedestroy($image_source);
     imagedestroy($image_dest);
+    imagedestroy($image_source1);
+    imagedestroy($image_dest1);
     
 
 
