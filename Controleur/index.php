@@ -256,13 +256,13 @@ function showImageOfModele($marque, $modele){
     imagecopyresampled($image_dest,$image_source,0,0,0,0,$larg_dest,$haut_dest,$larg_source,$haut_source);
     
     //Enregistrement de la miniature
-    imagejpeg($image_dest,'Mini Spidey.jpg');
-    imagejpeg($image_dest1,'Mini Ours.jpg');
+    imagejpeg($image_dest,'Mini auto.jpg');
+    imagejpeg($image_dest1,'Mini auto.jpg');
     
     //echo "<img src= 'Mini Spidey.jpg'> name='miniature' />";
     
-    echo "<a href='ours.jpg'> <img src= 'Mini Ours.jpg'> </a>";
-    echo "<a href='spidey.jpg'> <img src= 'Mini Spidey.jpg'> </a>";
+    echo "<a href=$photo> <img src= 'Mini auto.jpg'> </a>";
+    echo "<a href=$photo> <img src= 'Mini auto.jpg'> </a>";
     
     imagedestroy($image_source1);
     imagedestroy($image_source);
