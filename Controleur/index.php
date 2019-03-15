@@ -260,12 +260,13 @@ function afficherImageDuModele($marque, $modele){
     imagecopyresampled($image_dest,$image_source,0,0,0,0,$larg_dest,$haut_dest,$larg_source,$haut_source);
     
     //Enregistrement de la miniature
-    imagejpeg($image_dest,'miniAuto.jpg');
-    imagejpeg($image_dest1,'auto.jpg');
+    imagejpeg($image_dest,'auto.jpg');
+    imagejpeg($image_dest1,'miniAuto.jpg');
     
     
-    //echo "<img src= 'Mini Spidey.jpg'> name='miniature' />";
-    echo "<a href='miniAuto.jpg'> <img src='auto.jpg'> </a>";
+    
+    /* echo "<a href='miniAuto.jpg'> <img src='auto.jpg'> </a>"; */
+    echo "<img onclick ='auto.jpg' style='cursor: pointer;' src='miniAuto.jpg'/>";
     
     
     
