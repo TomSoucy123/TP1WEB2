@@ -178,7 +178,7 @@ echo $mensualite;  */
     include ('..\Modèle\voitures.php');
     $tableauDeMarque = selectionTableauDeMarque($marque);
    
-for($i = 0; $i < 4; $i++){
+for($i = 0; $i < sizeof($tableauDeMarque); $i++){
     foreach($tableauDeMarque[$i] as $value){
    if($value == $modele){
        $tableauAretourner = $tableauDeMarque[$i];
@@ -214,11 +214,22 @@ return $tableauAretourner;
     return $tableau;
 } 
 
-/* function slectionVoiture($tableau) {
-    for($i = 0;$i < sizeof($tableau);$i++){
-        return $tableau['modele'];
-    }
-}  */
+function selectionModele($modele, $marque){
+    include ('..\Modèle\voitures.php');
+    $tableauDeMarque = selectionTableauDeMarque($marque);
+   
+for($i = 0; $i < sizeof($tableauDeMarque); $i++){
+    foreach($tableauDeMarque[$i] as $value){
+   if($value == $modele){
+       $tableauAretourner = $tableauDeMarque[$i];
+
+}
+}
+
+}
+return $tableauAretourner;
+
+} 
 
 
 
