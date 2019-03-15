@@ -4,10 +4,8 @@ $tableauVoitures = array();
 /* echo  $_GET['marque'] . " de " .$_GET['modele']; */
 $marque =  $_GET['marque'];
 $modele = $_GET['modele'];
-$tableauVoitures = afficherImageDuModele($marque, $modele);
-print_r($tableauVoitures); 
-/* $tableauVoitures = showImageOfModele($modele,$marque);
-print_r($tableauVoitures); */
+
+
 
 
 ?>
@@ -31,8 +29,15 @@ print_r($tableauVoitures); */
  <!--------------- Barre de navigation ------------------>
  <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
-        <img src="D:\wamp64\www\TP1WEB2\Vue\Dealer-Car.jpg" width="200" height="120" class="d-inline-block align-top" alt="car-brand">
+        <img src="..\Vue\Dealer-Car.jpg" width="200" height="120" class="d-inline-block align-top" alt="car-brand">
       </a>
     </nav> 
     <h1>Sélection d'un véhicule parmis notre gamme</h1><br>
 
+<body>
+<?php
+$imageDuModele = afficherImageDuModele($marque, $modele);
+print_r($imageDuModele); 
+?>
+
+</body>
