@@ -1,5 +1,12 @@
 <?php
 include ("\wamp64\www\TP1WEB2\Controleur\index.php");
+$tableauVoitures = array();
+/* echo  $_GET['marque'] . " de " .$_GET['modele']; */
+$marque =  $_GET['marque'];
+$modele = $_GET['modele'];
+$tableauVoitures =selectionTableauDeMarque ($marque);
+/* $tableauVoitures = selectionTableau($marque); */
+print_r($tableauVoitures);
 
 ?>
 <!DOCTYPE html>
@@ -27,14 +34,3 @@ include ("\wamp64\www\TP1WEB2\Controleur\index.php");
     </nav> 
     <h1>Sélection d'un véhicule parmis notre gamme</h1><br>
 
-
-<?php
-$tableauVoitures = array();
-echo  $_GET['marque'] . " de " .$_GET['modele'];
-$marque =  $_GET['marque'];
-$modele = $_GET['modele'];
-$tableauVoitures = selectionTableau($marque);
-print_r($tableauVoitures);
-
-
-?>
