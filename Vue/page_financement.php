@@ -32,6 +32,7 @@
 
 
     <?php
+    /* echo $marque =  $_GET['prix']; */
     include ('\wamp64\www\tp1WEB2\Controleur\index.php');
     $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : $_POST['accompte'];
     $dureeDuPret = (isset($_POST['interets']))? $_POST['interets'] : $_POST['interets'];
