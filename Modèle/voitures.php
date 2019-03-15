@@ -21,7 +21,7 @@ $tab_marqueVoituresToyota = array(
 
 $tab_marqueVoituresChevrolet = array(
     0=>array('modele' => 'malibu', 'prix' => 3400, 'description' => "Chevrolet malibu 2009, excellent état, seulement 130 000km", 'photo' => '..\Modèle\photo voiture tpweb\malibu.JPG'),
-    1=>array('modele' => 'colorado', 'prix' => 1500, 'description' => "4 cyl 2.8L , boite de 6pieds, vien avec couvre boite , brake arriere neuf , brake avant ok , 4 pneus hiver en tres bon etats neuf de cette année , body ruff raison du bas prix , roule bien pratique et economique", 'photo' => '..\Modèle\photo voiture tpweb\coloradoRouge.JPG" title='),
+    1=>array('modele' => 'colorado', 'prix' => 1500, 'description' => "4 cyl 2.8L , boite de 6pieds, vien avec couvre boite , brake arriere neuf , brake avant ok , 4 pneus hiver en tres bon etats neuf de cette année , body ruff raison du bas prix , roule bien pratique et economique", 'photo' => '..\Modèle\photo voiture tpweb\coloradoRouge.JPG'),
     2=>array('modele' => 'corvette', 'prix' => 18995, 'description' => "belle corvette decapotable, manuelle, 72 000 km, couleur grise", 'photo' => '..\Modèle\photo voiture tpweb\corvetteGrise.JPG'));
 
 $tab_marqueVoituresBmw = array(
