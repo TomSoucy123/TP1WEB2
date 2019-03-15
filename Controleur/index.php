@@ -232,6 +232,44 @@ return $photo;
 
 }
 
+function showImageOfModele($marque, $modele){
+    include ('..\Modèle\photo voiture tpweb');
+    include ('..\Modèle\voitures.php');
+    $photo = recupererPhotoDuModele($modele,$marque);
+    $image_source = imagecreatefromjpeg($photo);
+    $image_dest = imagecreatetruecolor(90,90);
+    
+    $image_source1 = imagecreatefromjpeg($photo);
+    $image_dest1 = imagecreatetruecolor(90,90);
+    
+    //Largeur et la hauteur de ma source
+    $haut_source = imagesy($image_source);
+    $larg_source = imagesx($image_source);
+    
+    $haut_source1 = imagesy($image_source1);
+    $larg_source1 = imagesx($image_source1);
+    
+    $larg_dest = 90;
+    $haut_dest = 90;
+    
+    imagecopyresampled($image_dest1,$image_source1,0,0,0,0,$larg_dest,$haut_dest,$larg_source1,$haut_source1);
+    imagecopyresampled($image_dest,$image_source,0,0,0,0,$larg_dest,$haut_dest,$larg_source,$haut_source);
+    
+    //Enregistrement de la miniature
+    imagejpeg($image_dest,'Mini Spidey.jpg');
+    imagejpeg($image_dest1,'Mini Ours.jpg');
+    
+    //echo "<img src= 'Mini Spidey.jpg'> name='miniature' />";
+    
+    echo "<a href='ours.jpg'> <img src= 'Mini Ours.jpg'> </a>";
+    echo "<a href='spidey.jpg'> <img src= 'Mini Spidey.jpg'> </a>";
+    
+    imagedestroy($image_source1);
+    imagedestroy($image_source);
+    imagedestroy($image_dest);
+    imagedestroy($image_dest1);
 
+
+}
 
 ?>
