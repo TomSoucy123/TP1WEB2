@@ -4,9 +4,9 @@ $tableauVoitures = array();
 /* echo  $_GET['marque'] . " de " .$_GET['modele']; */
 $marque =  $_GET['marque'];
 $modele = $_GET['modele'];
-$tableauVoitures = recupererPhotoDuModele($modele,$marque);
-
+$tableauVoitures = showImageOfModele($modele,$marque);
 print_r($tableauVoitures);
+
 
 ?>
 <!DOCTYPE html>
