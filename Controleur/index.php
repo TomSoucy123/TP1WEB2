@@ -258,7 +258,7 @@ function afficherImageDuModele($marque, $modele){
     
     
     //echo "<img src= 'Mini Spidey.jpg'> name='miniature' />";
-    
+    echo "<a href=$photo> <img src= $photo> </a>";
     echo "<a href='miniAuto.jpg'> <img src= 'miniauto.jpg'> </a>";
     
     
