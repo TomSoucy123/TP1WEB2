@@ -38,6 +38,17 @@ $modele = $_GET['modele'];
 <?php
 $imageDuModele = afficherImageDuModele($marque, $modele);
 print_r($imageDuModele); 
+    echo "<a href='auto.jpg'> <img src='miniAuto.jpg'> </a>"; 
+    echo "<br><br>";
+    $description = recupererDescriptionDuModele($modele,$marque);
+    echo $description;
+    echo "<br><br>";
+    $prix = recupererPrixDuModele($modele,$marque);
+    echo "<a href='#' name='prix'> $prix </a>";
+    if(isset($_GET['prix'])){
+        
+  header('Location:financement.php?prix=' .$prix);
+    }
 ?>
 
 </body>
