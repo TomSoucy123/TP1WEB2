@@ -231,16 +231,46 @@ function recupererPhotoDuModele($modele,$marque){
 return $photo;
 
 }
+function recupererDescriptionDuModele($modele,$marque){
+    include ('..\Modèle\voitures.php');
+    $tableau = selectionModele($modele, $marque);
+    foreach($tableau as $key => $value){
+        if($key == 'description'){
+            $description = $value;
+            
+
+        }
+
+    }
+
+return $description;
+
+}
+function recupererPrixDuModele($modele,$marque){
+    include ('..\Modèle\voitures.php');
+    $tableau = selectionModele($modele, $marque);
+    foreach($tableau as $key => $value){
+        if($key == 'prix'){
+            $prix = $value;
+            
+
+        }
+
+    }
+
+return $prix;
+
+}
 
 function afficherImageDuModele($marque, $modele){
     
     include ('..\Modèle\voitures.php');
     $photo = recupererPhotoDuModele($modele,$marque);
     $image_source = imagecreatefromjpeg($photo);
-    $image_dest = imagecreatetruecolor(400,400);
+    $image_dest = imagecreatetruecolor(500,500);
     
     $image_source1 = imagecreatefromjpeg($photo);
-    $image_dest1 = imagecreatetruecolor(150,150);
+    $image_dest1 = imagecreatetruecolor(250,250);
     
     //Largeur et la hauteur de ma source
     $haut_source = imagesy($image_source);
@@ -251,10 +281,10 @@ function afficherImageDuModele($marque, $modele){
     
     
     
-    $larg_dest = 400;
-    $haut_dest = 400;
-    $larg_dest1 = 150;
-    $haut_dest1 = 150;
+    $larg_dest = 500;
+    $haut_dest = 500;
+    $larg_dest1 = 250;
+    $haut_dest1 = 250;
     
     imagecopyresampled($image_dest1,$image_source1,0,0,0,0,$larg_dest1,$haut_dest1,$larg_source1,$haut_source1);
     imagecopyresampled($image_dest,$image_source,0,0,0,0,$larg_dest,$haut_dest,$larg_source,$haut_source);
@@ -265,8 +295,19 @@ function afficherImageDuModele($marque, $modele){
     
     
     
-    /* echo "<a href='miniAuto.jpg'> <img src='auto.jpg'> </a>"; */
-    echo "<img onclick ='auto.jpg' style='cursor: pointer;' src='miniAuto.jpg'/>";
+    /* echo "<a href='auto.jpg'> <img src='miniAuto.jpg'> </a>"; 
+    echo "<br><br>";
+    $description = recupererDescriptionDuModele($modele,$marque);
+    echo $description;
+    echo "<br><br>";
+    $prix = recupererPrixDuModele($modele,$marque);
+    echo "<a href='#' name='prix'> $prix </a>";
+    if(isset($_GET['prix'])){
+        
+  header('Location:financement.php?prix=' .$prix);
+    } */
+   
+    /* echo "<img src='miniAuto.jpg' onclick ='auto.jpg' style='cursor: pointer;'/>"; */
     
     
     
