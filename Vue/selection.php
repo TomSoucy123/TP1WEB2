@@ -4,6 +4,10 @@ $tableauVoitures = array();
 /* echo  $_GET['marque'] . " de " .$_GET['modele']; */
 $marque =  $_GET['marque'];
 $modele = $_GET['modele'];
+if(isset($_POST['prix'])){
+  echo "CLICKED";  
+ header('Location:page_financement.php?prix=' .$prix); 
+}
 
 
 
@@ -35,20 +39,18 @@ $modele = $_GET['modele'];
     <h1>Sélection d'un véhicule parmis notre gamme</h1><br>
 
 <body>
+<form name="form" method="POST">
 <?php
 $imageDuModele = afficherImageDuModele($marque, $modele);
 print_r($imageDuModele); 
-    echo "<a href='auto.jpg'> <img src='miniAuto.jpg'> </a>"; 
-    echo "<br><br>";
-    $description = recupererDescriptionDuModele($modele,$marque);
-    echo $description;
-    echo "<br><br>";
-    $prix = recupererPrixDuModele($modele,$marque);
-    echo "<a href='#' name='prix'> $prix </a>";
-    if(isset($_GET['prix'])){
-        
-  header('Location:financement.php?prix=' .$prix);
-    }
-?>
+echo "<a href='auto.jpg'> <img src='miniAuto.jpg'> </a>"; 
+echo "<br><br>";
+$description = recupererDescriptionDuModele($modele,$marque);
+echo $description;
+echo "<br><br>";
+$prix = recupererPrixDuModele($modele,$marque);
+echo "<a href='#' name='prix'> $prix </a>";
 
+?>
+</form>
 </body>
