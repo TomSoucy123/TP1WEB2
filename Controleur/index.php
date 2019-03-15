@@ -215,6 +215,22 @@ for($i = 0; $i < sizeof($tableauDeMarque); $i++){
 return $tableauAretourner;
 
 } 
+ 
+function recupererPhotoDuModele($modele,$marque){
+    include ('..\Modèle\voitures.php');
+    $tableau = selectionModele($modele, $marque);
+    foreach($tableau as $key => $value){
+        if($key == 'photo'){
+            $photo = $value;
+            
+
+        }
+
+    }
+
+return $photo;
+
+}
 
 
 
