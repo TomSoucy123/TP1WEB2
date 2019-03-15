@@ -259,13 +259,13 @@ function afficherImageDuModele($marque, $modele){
     
     //echo "<img src= 'Mini Spidey.jpg'> name='miniature' />";
     
-    echo "<a href=$photo> <img src= 'Mini auto.jpg'> </a>";
+    echo "<a href='miniAuto.jpg'> <img src= 'miniauto.jpg'> </a>";
     
     
-    imagedestroy($image_source1);
+    
     imagedestroy($image_source);
     imagedestroy($image_dest);
-    imagedestroy($image_dest1);
+    
 
 
 }
