@@ -295,7 +295,7 @@ function afficherImageDuModele($marque, $modele){
     
     
     
-    /* echo "<a href='auto.jpg'> <img src='miniAuto.jpg'> </a>"; 
+     /* echo "<a href='auto.jpg'> <img src='miniAuto.jpg'> </a>"; 
     echo "<br><br>";
     $description = recupererDescriptionDuModele($modele,$marque);
     echo $description;
@@ -305,7 +305,7 @@ function afficherImageDuModele($marque, $modele){
     if(isset($_GET['prix'])){
         
   header('Location:financement.php?prix=' .$prix);
-    } */
+    }  */
    
     /* echo "<img src='miniAuto.jpg' onclick ='auto.jpg' style='cursor: pointer;'/>"; */
     
