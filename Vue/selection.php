@@ -1,13 +1,10 @@
 <?php
 include ("\wamp64\www\TP1WEB2\Controleur\index.php");
 $tableauVoitures = array();
-/* echo  $_GET['marque'] . " de " .$_GET['modele']; */
+
 $marque =  $_GET['marque'];
 $modele = $_GET['modele'];
-if(isset($_POST['prix'])){
-  echo "CLICKED";  
- header('Location:page_financement.php?prix=' .$prix); 
-}
+
 
 
 
@@ -49,7 +46,7 @@ $description = recupererDescriptionDuModele($modele,$marque);
 echo $description;
 echo "<br><br>";
 $prix = recupererPrixDuModele($modele,$marque);
-echo "<a href='#' name='prix'> $prix </a>";
+echo "<a href='page_financement.php?prix=$prix'> $prix </a>";
 
 ?>
 </form>
