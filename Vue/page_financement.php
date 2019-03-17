@@ -50,8 +50,8 @@
    $taxes_finaux = calculerTaxes($coutsFinal);
    $taux = determinerLeTauxDinteret($dureeDuPret, $couts);
    $taux_interet = $taux * 1000;
-   $interets = calculerInterets($couts, $dureeDuPret,$accompte,$taux_interet);
-   $interets_finaux = calculerInterets($coutsFinal , $dureeDuPret, $accompte, $taux_interet);
+   $interets = calculerInterets($couts, $dureeDuPret,0,$taux_interet);
+   $interets_finaux = calculerInterets($couts , $dureeDuPret, $accompte, $taux_interet);
    $montantAFinancer = $couts + $interets;
    $montantAFinancerFinal = $couts + $interets;
    $mensualite =  calcul_mensualite($dureeDuPret,$couts);
