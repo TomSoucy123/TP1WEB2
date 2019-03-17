@@ -32,12 +32,19 @@
 
 
     <?php
-    /* echo $marque =  $_GET['prix']; */
-    include ('\wamp64\www\tp1WEB2\Controleur\index.php');
+    include ('..\Controleur\index.php');
+    $prix = (isset($_POST['prix'])) ? $_POST['prix'] : $_GET['prix'];
+    if(isset($_POST['calcul'])){
+      $couts_final = $couts - $accompte; 
+      
+      header('Location:page_financement.php?prixDeLaVoiture=' .$prixDeLaVoiture); 
+    }
+    $vraiprix = $_GET['prixDeLaVoiture'];
+    echo $vraiprix;
+    
     $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : $_POST['accompte'];
     $dureeDuPret = (isset($_POST['interets']))? $_POST['interets'] : $_POST['interets'];
-    echo $dureeDuPret;
-    $couts = 10000;
+    $couts = $prix;
     $couts_final = $couts - $accompte;
     $taxes = calculerTaxes($couts);
    $taxes_finaux = calculerTaxes($couts_final);
@@ -63,7 +70,7 @@
     
     <h1>Voici votre facutre et ses details</h2>
     <br>
-    <form name='formulaire' method='post' action='page_financement.php'>
+    <form name='formulaire' method='POST'>
     <label for='nom'>Saisissez votre accompte :</label>           <input type='number' name="accompte" value="<?php echo $accompte ?>" />
      <br><br>
     Intérêts: <select name="interets"> 
