@@ -54,54 +54,6 @@ function determinerLeTauxDinteret($dureePret, $prix){
             return $tauxInteret;
         }
        
-/*     $tauxInteret = 0;
-if($dureePret == 24 || $dureePret == 12 && $capitalInvesti <= 10000){
-    $tauxInteret = 6.95;
-    
-
-}
-if($dureePret == 24 || $dureePret == 12 && $capitalInvesti> 10000){
-    $tauxInteret = 7.25;
-    
-
-}
-if($dureePret == 36 && $capitalInvesti <= 10000){
-    $tauxInteret = 6.25;
-    
-    
-}
-if($dureePret == 36 && $capitalInvesti > 10000){
-        $tauxInteret = 6.30;
-        
-        
-    
-}
-if($dureePret == 48 && $capitalInvesti <= 10000){
-        $tauxInteret = 6.10;
-        
-}
-if($dureePret == 48 && $capitalInvesti > 10000){
-        $tauxInteret = 6.30;
-        
-    
-}
-if($dureePret == 60 && $capitalInvesti <= 10000){
-        $tauxInteret = 6.00;
-        
-}
-if($dureePret == 60 && $capitalInvesti > 10000){
-        $tauxInteret = 5.85;
-        
-    
-}
-
-$tauxInteret = $tauxInteret/1000;
-echo $tauxInteret;
-
-
-
-return $tauxInteret;
-} */
 
 function trouverTauxInteret($dureePret, $prix){
     $taux_interet = determinerLeTauxDinteret($dureePret, $prix);
@@ -153,37 +105,9 @@ function listeDeroulante($tableauInteretPrixMoinsQue10000,$dureeDuPret){
 }
 }
 
-/* $capitalInvesti = 5000;
-$dureeDuPret = 36;
 
-function calcul_mensualite($dureeDuPret,$capitalInvesti){
-        
-$interet = determinerLeTauxDinteret($dureeDuPret, $capitalInvesti);
-echo $interet;
-
-echo "<br><br>";
-
-$premiereLigne = $interet * pow(1+$interet, $dureeDuPret);
-echo $premiereLigne;
-echo "<br><br>";
-
-$deuxiemeLigne = pow(1+$interet, $dureeDuPret) - 1;
-echo $deuxiemeLigne;
-echo "<br><br>";
-$mensualite = $capitalInvesti * ($premiereLigne/$deuxiemeLigne);
-return $mensualite;
-}
-
-$mensualite = calcul_mensualite($dureePret,$capitalInvesti);
-echo $mensualite;  */
  
 /*---------------------- selection.php ------------------------*/
-
-
-
-
-
-
 
 
  function selectionTableauDeMarque($marque) {
@@ -297,28 +221,10 @@ function afficherImageDuModele($marque, $modele){
     imagecopyresampled($image_dest1,$image_source1,0,0,0,0,$larg_dest1,$haut_dest1,$larg_source1,$haut_source1);
     imagecopyresampled($image_dest,$image_source,0,0,0,0,$larg_dest,$haut_dest,$larg_source,$haut_source);
     
-    //Enregistrement de la miniature
+    //Enregistrement
     imagejpeg($image_dest,'auto.jpg');
     imagejpeg($image_dest1,'miniAuto.jpg');
-    
-    
-    
-     /* echo "<a href='auto.jpg'> <img src='miniAuto.jpg'> </a>"; 
-    echo "<br><br>";
-    $description = recupererDescriptionDuModele($modele,$marque);
-    echo $description;
-    echo "<br><br>";
-    $prix = recupererPrixDuModele($modele,$marque);
-    echo "<a href='#' name='prix'> $prix </a>";
-    if(isset($_GET['prix'])){
-        
-  header('Location:financement.php?prix=' .$prix);
-    }  */
-   
-    /* echo "<img src='miniAuto.jpg' onclick ='auto.jpg' style='cursor: pointer;'/>"; */
-    
-    
-    
+       
     imagedestroy($image_source);
     imagedestroy($image_dest);
     imagedestroy($image_source1);
