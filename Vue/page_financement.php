@@ -25,7 +25,7 @@
      <!--------------- Barre de navigation ------------------>
      <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
-        <img src="D:\wamp64\www\TP1WEB2\Vue\Dealer-Car.jpg" width="200" height="120" class="d-inline-block align-top" alt="car-brand">
+        <img src="..\Vue\Dealer-Car.jpg" width="200" height="120" class="d-inline-block align-top" alt="car-brand">
       </a>
     </nav> 
     <h1>Financement de votre tout nouveau véhicule</h1><br>
@@ -33,34 +33,30 @@
 
     <?php
     include ('..\Controleur\index.php');
-    $prix = (isset($_POST['prix'])) ? $_POST['prix'] : $_GET['prix'];
-    if(isset($_POST['calcul'])){
-      $couts_final = $couts - $accompte; 
-      
-      header('Location:page_financement.php?prixDeLaVoiture=' .$prixDeLaVoiture); 
-    }
-    $vraiprix = $_GET['prixDeLaVoiture'];
-    echo $vraiprix;
-    
+    /* $valider = (isset($_POST['calcul']))? $_POST['calcul'] : null;
+    if($valider !=null){
+
+  
+      $valeurListeDeroulante = $_POST['interets'];
+      header('Location:page_financement.php?listeDerulante=' .$valeurListeDeroulante );
+    }  */
+    $prix = (isset($_POST['prix'])) ? $couts : $_GET['prix'];
     $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : $_POST['accompte'];
-    $dureeDuPret = (isset($_POST['interets']))? $_POST['interets'] : $_POST['interets'];
+    $dureeDuPret = (isset($_POST['calcul']))? $_POST['interets'] : $_POST['interets']; 
     $couts = $prix;
-    $couts_final = $couts - $accompte;
+    $coutsFinal = $couts - $accompte;
     $taxes = calculerTaxes($couts);
-   $taxes_finaux = calculerTaxes($couts_final);
+   $taxes_finaux = calculerTaxes($coutsFinal);
    $taux = determinerLeTauxDinteret($dureeDuPret, $couts);
    $taux_interet = $taux * 1000;
    $interets = calculerInterets($couts, $dureeDuPret,$accompte,$taux_interet);
-   $interets_finaux = calculerInterets($couts_final , $dureeDuPret, $accompte, $taux_interet);
+   $interets_finaux = calculerInterets($coutsFinal , $dureeDuPret, $accompte, $taux_interet);
+   $montantAFinancer = $couts + $interets;
+   $montantAFinancerFinal = $couts + $interets;
+   $mensualite =  calcul_mensualite($dureeDuPret,$couts);
+   $mensualite_final = calcul_mensualite($dureeDuPret,$coutsFinal);
    
-    /* $interets = calculerInterets($_POST['interets'], $couts);  */
- /*    if(isset($_POST['interets']))
-{
-  $dureeDesMois = $_POST['interets'];
-  
-  
-  /* header('Location:page_financement.php?interet=' .$valeur); */
-/* }  */
+
    
     
 ?>
@@ -70,11 +66,13 @@
     
     <h1>Voici votre facutre et ses details</h2>
     <br>
-    <form name='formulaire' method='POST'>
+    <form method="POST">
     <label for='nom'>Saisissez votre accompte :</label>           <input type='number' name="accompte" value="<?php echo $accompte ?>" />
      <br><br>
-    Intérêts: <select name="interets"> 
+    Intérêts: <select name="interets" value="<?php  $_POST['listeMarque'];  ?>">
+    
     <?php
+    
     if($couts <= 10000){
 
     
@@ -101,7 +99,7 @@
   <tr>
     <td>Coût total :</td>
     <td><?php echo $couts."$"?></td>
-    <td><?php echo $couts_final."$"; ?></td>
+    <td><?php echo $coutsFinal."$"; ?></td>
     
   </tr>
   <tr>
@@ -118,14 +116,14 @@
   </tr>
   <tr>
     <td>Montant à financer :</td>
-    <td>200$</td>
-    <td>200$</td>
+    <td><?php echo $montantAFinancer."$"; ?></td>
+    <td><?php echo $montantAFinancerFinal."$"; ?></td>
   </tr>
   
   <tr>
     <td>Paiement mensuel :</td>
-    <td><?php $interets  ?></td>
-    <td>500$</td>
+    <td><?php echo $mensualite."$"; ?></td>
+    <td><?php echo $mensualite_final."$"; ?></td>
     
   </tr>
 </table>
