@@ -33,26 +33,15 @@
 
     <?php
     include ('..\Controleur\index.php');
-<<<<<<< HEAD
-    /* $valider = (isset($_POST['calcul']))? $_POST['calcul'] : null;
+     /* $valider = (isset($_POST['calcul']))? $_POST['calcul'] : null;
     if($valider !=null){
 
   
       $valeurListeDeroulante = $_POST['interets'];
-      header('Location:page_financement.php?listeDerulante=' .$valeurListeDeroulante );
-    }  */
+      $accompte = $_POST['accompte'];
+      header('Location:page_financement.php?listeDeroulante=' .$valeurListeDeroulante. '&prix=' .$prix. '&accompte=' .$accompte);
+    }  */ 
     $prix = (isset($_POST['prix'])) ? $couts : $_GET['prix'];
-=======
-    $prix = (isset($_POST['prix'])) ? $_POST['prix'] : $_GET['prix'];
-    if(isset($_POST['calcul'])){
-      $couts_final = $couts - $accompte;
-      
-      header('Location:page_financement.php?prixDeLaVoiture=' .$prixDeLaVoiture); 
-    }
-    $vraiprix = $_GET['prixDeLaVoiture'];
-    echo $vraiprix;
-    
->>>>>>> 473280cdb17723b2aca8009fe7918a90aa3fe8ac
     $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : $_POST['accompte'];
     $dureeDuPret = (isset($_POST['calcul']))? $_POST['interets'] : $_POST['interets']; 
     $couts = $prix;
@@ -81,18 +70,20 @@
     <form method="POST">
     <label for='nom'>Saisissez votre accompte :</label>           <input type='number' name="accompte" value="<?php echo $accompte ?>" />
      <br><br>
-    Intérêts: <select name="interets" value="<?php  $_POST['listeMarque'];  ?>">
+    Intérêts: <select name="interets" value="<?php echo $dureeDuPret; ?>">
     
     <?php
     
     if($couts <= 10000){
 
     
-        listeDeroulante($tableauInteretPrixMoinsQue10000);
+      listeDeroulante($tableauInteretPrixMoinsQue10000,$dureeDuPret);
     }
-    else{
-        listeDeroulante($tableauInteretPrixPlusQue10000);
-    }
+       
+
+     else{
+        listeDeroulante($tableauInteretPrixPlusQue10000,$dureeDuPret);
+    } 
         ?>
         </select>
         <input type='submit' name="calcul" value="Calculer" />
