@@ -61,6 +61,7 @@ echo '--------- test fonction calculerInterets($prix,$mois,$accompte,$interet) -
 
 echo '1-' . calculerInterets(4500,12,2000,5) .' -fonctionne'. '<br><br>';
 echo '2-' . calculerInterets(4500,12,0,3) .' -fonctionne'. '<br><br>';
+echo '2-' . calculerInterets(4500,24,2000,5) .' -fonctionne'. '<br><br>';
 
 echo '--------- test fonction calculerTaxes($prix) -----------'.'<br><br><br>';
 
