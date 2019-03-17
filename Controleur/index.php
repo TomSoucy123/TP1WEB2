@@ -119,8 +119,9 @@ return $mensualite;
 
 /* SOURCE DE CALCUL : http://www.calculconversion.com/calcul-interet-compose.html */
 function calculerInterets($prix,$mois,$accompte,$interet){
-        $valeur_temporaire = ($prix-$accompte)*pow((1+$interet/12/100),$mois);
-        $interet = $valeur_temporaire - $prix;
+        $prixAvecAccompte = $prix - $accompte;
+        $prixAvecInterets = $prixAvecAccompte*pow((1+$interet/12/100),$mois);
+        $interet = $prixAvecInterets - $prixAvecAccompte;
         return $interet;
         
 }
