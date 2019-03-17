@@ -59,9 +59,6 @@ echo '5-' . calcul_mensualite(45, 10000) .' -ne doit pas fonctionne'. '<br><br>'
 
 echo '--------- test fonction calculerInterets($prix,$mois,$accompte,$interet) -----------'.'<br><br><br>';
 
-<<<<<<< HEAD
-echo '1-' . calculerInterets(4500,12,2000,6.1) .' -fonctionne'. '<br><br>';
-=======
 echo '1-' . calculerInterets(4500,12,2000,5) .' -fonctionne'. '<br><br>';
 echo '2-' . calculerInterets(4500,12,0,3) .' -fonctionne'. '<br><br>';
 echo '2-' . calculerInterets(4500,24,2000,5) .' -fonctionne'. '<br><br>';
@@ -72,5 +69,4 @@ echo '1-' . calculerTaxes(3000) .' -fonctionne'. '<br><br>';
 echo '2-' . calculerTaxes(1000) .' -fonctionne'. '<br><br>';
 echo '3-' . calculerTaxes(10001) .' -fonctionne'. '<br><br>';
 echo '4-' . calculerTaxes(0) .' -fonctionne'. '<br><br>';
->>>>>>> 6a1bb44138c6734156443a68db6e715bce571fc2
 ?>
