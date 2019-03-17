@@ -59,5 +59,5 @@ echo '5-' . calcul_mensualite(45, 10000) .' -ne doit pas fonctionne'. '<br><br>'
 
 echo '--------- test fonction calculerInterets($prix,$mois,$accompte,$interet) -----------'.'<br><br><br>';
 
-echo '1-' . calculerInterets(4500,12,2000,) .' -fonctionne'. '<br><br>';
+echo '1-' . calculerInterets(4500,12,2000,6.1) .' -fonctionne'. '<br><br>';
 ?>
