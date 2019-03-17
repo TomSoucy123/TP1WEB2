@@ -119,12 +119,19 @@ return $mensualite;
 
 
 function calculerInterets($prix,$mois,$accompte,$interet){
-        $valeur_temporaire = ($prix-$accompte)*pow(1+$interet/12/100,$mois);
+        $valeur_temporaire = ($prix-$accompte)*pow((1+$interet/12/100),$mois);
         $interet = $valeur_temporaire - $prix;
         return $interet;
         
 }
+/* function calculerInterets2($mois, $accompte, $prix){
+    $mensualite = calcul_mensualite($mois,$prix - $accompte);
+$interets = ($mensualite * $duree ) - ($prix - $accompte);
+return $interets;
 
+
+}
+ */
 function calculerTaxes($prix){
 $tps = ($prix * 5) / 100;
 $tvq = ($prix * 9.975) / 100;
@@ -133,16 +140,24 @@ return $taxes;
 
 }
 
+function listeDeroulante($tableauInteretPrixMoinsQue10000,$dureeDuPret){
+    foreach($tableauInteretPrixMoinsQue10000 as $cle => $valeur){
 
-function listeDeroulante($tableauInteretPrixMoinsQue10000){
-        foreach($tableauInteretPrixMoinsQue10000 as $key => $value) {
+        if($cle == $dureeDuPret){
+            echo '<option value="'.$cle.'"selected>'.$cle." mois-".$valeur."%".'</option>';
+            echo '<br><br>';
+            echo "rererer";
+    }
+        else{
             
-            echo '<option value="'.$key.'">'.$key." mois-".$value."%".'</option>';
+            
+            echo '<option value="'.$cle.'">'.$cle." mois-".$valeur."%".'</option>';
             echo '<br><br>';
         
             
         
     }
+}
 }
 
 /* $capitalInvesti = 5000;
