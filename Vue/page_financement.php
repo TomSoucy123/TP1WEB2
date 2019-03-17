@@ -33,6 +33,7 @@
 
     <?php
     include ('..\Controleur\index.php');
+<<<<<<< HEAD
     /* $valider = (isset($_POST['calcul']))? $_POST['calcul'] : null;
     if($valider !=null){
 
@@ -41,6 +42,17 @@
       header('Location:page_financement.php?listeDerulante=' .$valeurListeDeroulante );
     }  */
     $prix = (isset($_POST['prix'])) ? $couts : $_GET['prix'];
+=======
+    $prix = (isset($_POST['prix'])) ? $_POST['prix'] : $_GET['prix'];
+    if(isset($_POST['calcul'])){
+      $couts_final = $couts - $accompte;
+      
+      header('Location:page_financement.php?prixDeLaVoiture=' .$prixDeLaVoiture); 
+    }
+    $vraiprix = $_GET['prixDeLaVoiture'];
+    echo $vraiprix;
+    
+>>>>>>> 473280cdb17723b2aca8009fe7918a90aa3fe8ac
     $accompte = (isset($_POST['accompte'])) ? $_POST['accompte'] : $_POST['accompte'];
     $dureeDuPret = (isset($_POST['calcul']))? $_POST['interets'] : $_POST['interets']; 
     $couts = $prix;
