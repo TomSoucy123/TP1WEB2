@@ -35,7 +35,7 @@
     include ('..\Controleur\index.php');
     $prix = (isset($_POST['prix'])) ? $_POST['prix'] : $_GET['prix'];
     if(isset($_POST['calcul'])){
-      $couts_final = $couts - $accompte; 
+      $couts_final = $couts - $accompte;
       
       header('Location:page_financement.php?prixDeLaVoiture=' .$prixDeLaVoiture); 
     }
