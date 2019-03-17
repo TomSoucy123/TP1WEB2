@@ -140,15 +140,24 @@ return $taxes;
 
 }
 
-function listeDeroulante($tableauInteretPrixMoinsQue10000){
-        foreach($tableauInteretPrixMoinsQue10000 as $key => $value) {
+function listeDeroulante($tableauInteretPrixMoinsQue10000,$dureeDuPret){
+    foreach($tableauInteretPrixMoinsQue10000 as $cle => $valeur){
+
+        if($cle == $dureeDuPret){
+            echo '<option value="'.$cle.'"selected>'.$cle." mois-".$valeur."%".'</option>';
+            echo '<br><br>';
+            echo "rererer";
+    }
+        else{
             
-            echo '<option value="'.$key.'">'.$key." mois-".$value."%".'</option>';
+            
+            echo '<option value="'.$cle.'">'.$cle." mois-".$valeur."%".'</option>';
             echo '<br><br>';
         
             
         
     }
+}
 }
 
 /* $capitalInvesti = 5000;
